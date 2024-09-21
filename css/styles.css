@@ -276,6 +276,29 @@ img {
 .team-section {
   background: #f4f4fd;
 }
+.list-icon-team {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 8px;
+}
+.social-list-icon {
+  fill: #f4f4fd;
+}
+.list-icon-social {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background: #4d5ae5;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  transition-property: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.list-icon-social:hover,
+.list-icon-social:focus {
+  background: #404bbf;
+}
 /* ================ OUR PORTFOLIO STYLE ================ */
 .portfolio-section-list {
   display: flex;
@@ -344,6 +367,10 @@ img {
 .page-footer {
   padding: 100px 0;
 }
+.footer-container {
+  display: flex;
+  gap: 120px;
+}
 .footer-logo .logo-part {
   color: #f4f4fd;
 }
@@ -356,4 +383,31 @@ img {
   letter-spacing: 0.02em;
   color: #f4f4fd;
   max-width: 264px;
+}
+
+.footer-social-text {
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+.list-icon-footer {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.list-icon-social-footer {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background: #4d5ae5;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  transition-property: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.list-icon-social-footer:hover,
+.list-icon-social-footer:focus {
+  background: #31d0aa;
 }
