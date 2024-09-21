@@ -55,6 +55,8 @@ img {
 /* ================ HEADER STYLES ================ */
 .page-header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 .header-container {
   display: flex;
@@ -68,6 +70,20 @@ img {
   display: flex;
   align-items: center;
   gap: 40px;
+}
+
+.nav-link.studio-link {
+  position: relative;
+}
+.nav-link.studio-link::after {
+  position: absolute;
+  content: "";
+  border-radius: 2px;
+  width: 100%;
+  height: 4px;
+  background-color: #404bbf;
+  left: 0;
+  bottom: -1px;
 }
 .contacts-list {
   display: flex;
@@ -98,6 +114,7 @@ img {
   color: #2e2f42;
   display: block;
   padding: 24px 0;
+  transition-property: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts {
@@ -110,11 +127,14 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+  transition-property: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .contacts-link:hover,
 .contacts-link:focus,
 .nav-link:hover,
-.nav-link:focus {
+.nav-link:focus,
+.nav-link.studio-link {
   color: #404bbf;
 }
 /* ================ HERO STYLES ================ */
@@ -122,10 +142,17 @@ img {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #2e2f42;
   padding-bottom: 188px;
   padding-top: 188px;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office.jpg);
+  background-size: cover;
+  background-color: #2e2f42;
 }
+
 .main-title {
   max-width: 496px;
   margin-left: auto;
@@ -161,17 +188,28 @@ img {
   align-items: flex-start;
   justify-content: flex-start;
   gap: 10px;
+  transition-property: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-service-btn:hover,
 .order-service-btn:focus {
   background-color: #404bbf;
 }
-
 /* ================ OUR BENEFITS STYLE ================ */
 .benefits-list {
   display: flex;
   gap: 24px;
+}
+.icon-bacground {
+  width: 100%;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  height: 112px;
+  background: #f4f4fd;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .benefits-list-item {
@@ -267,7 +305,38 @@ img {
   color: #2e2f42;
   margin-bottom: 8px;
 }
+.box-overlay {
+  position: relative;
+  overflow: hidden;
+}
 
+.portfolio-section-item {
+  transition-property: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background: #4d5ae5;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 40px;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-section-item:hover .portfolio-overlay {
+  transform: translateY(0);
+}
+.portfolio-section-item:hover {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
 /* ================ FOOTER STYLES ================ */
 .page-footer {
   background-color: #2e2f42;
